@@ -1,6 +1,6 @@
 # Binance Futures Trading Bot
 
-A Python-based command-line trading bot that places MARKET and LIMIT orders on Binance USDT-M Futures Demo Trading using the Binance API.
+A Python-based command-line trading bot that places MARKET and LIMIT orders on Binance Futures Demo Trading using the Binance API.
 
 ## Features
 
@@ -9,9 +9,9 @@ A Python-based command-line trading bot that places MARKET and LIMIT orders on B
 * Supports BUY and SELL orders
 * Command-line interface using argparse
 * Input validation
-* API request and response logging
-* Exception handling for invalid inputs and API errors
-* Secure credential management using environment variables
+* Logging of API requests, responses, and errors
+* Exception handling
+* Secure API credential management using environment variables
 
 ## Project Structure
 
@@ -34,51 +34,51 @@ binance-futures-trading-bot/
 └── README.md
 ```
 
-## Setup
+## Installation
 
-### 1. Clone Repository
+Clone the repository:
 
 ```bash
 git clone https://github.com/Shxrlixn/binance-futures-trading-bot.git
 cd binance-futures-trading-bot
 ```
 
-### 2. Install Dependencies
+Install dependencies:
 
 ```bash
 pip install -r requirements.txt
 ```
 
-### 3. Create Environment File
+## Environment Variables
 
-Create a `.env` file in the project root:
+Create a `.env` file in the root directory:
 
 ```env
-BINANCE_API_KEY=your_api_key
-BINANCE_SECRET_KEY=your_secret_key
+API_KEY=your_api_key
+API_SECRET=your_api_secret
 ```
 
 ## Usage
 
-### MARKET BUY
+### MARKET BUY Order
 
 ```bash
 python cli.py --symbol BTCUSDT --side BUY --type MARKET --quantity 0.001
 ```
 
-### MARKET SELL
+### MARKET SELL Order
 
 ```bash
 python cli.py --symbol BTCUSDT --side SELL --type MARKET --quantity 0.001
 ```
 
-### LIMIT BUY
+### LIMIT BUY Order
 
 ```bash
 python cli.py --symbol BTCUSDT --side BUY --type LIMIT --quantity 0.002 --price 50000
 ```
 
-### LIMIT SELL
+### LIMIT SELL Order
 
 ```bash
 python cli.py --symbol BTCUSDT --side SELL --type LIMIT --quantity 0.002 --price 100000
@@ -86,18 +86,35 @@ python cli.py --symbol BTCUSDT --side SELL --type LIMIT --quantity 0.002 --price
 
 ## Logging
 
-All requests and responses are stored in:
+All API requests, responses, and errors are logged to:
 
 ```text
 logs/trading_bot.log
 ```
 
+Example log entries:
+
+```text
+INFO - MARKET ORDER | Symbol=BTCUSDT Side=BUY Qty=0.001
+INFO - Response: {...}
+ERROR - Side must be BUY or SELL
+```
+
+## Validation
+
+The application validates:
+
+* Order side (BUY / SELL)
+* Order type (MARKET / LIMIT)
+* Positive quantity values
+* Price requirement for LIMIT orders
+
 ## Assumptions
 
 * Binance Futures Demo Trading account is configured correctly.
-* API credentials have Futures permissions enabled.
-* Orders are executed on Binance Demo Trading environment only.
-* Internet connection is available during execution.
+* Valid API credentials are available.
+* Futures permissions are enabled for the API key.
+* Internet access is available during execution.
 
 ## Technologies Used
 
@@ -109,4 +126,4 @@ logs/trading_bot.log
 
 ## Author
 
-Sherlien
+Sherlien Molly D
