@@ -1,6 +1,6 @@
 # Binance Futures Trading Bot
 
-A Python-based command-line trading bot that places MARKET and LIMIT orders on Binance Futures Demo Trading using the Binance API.
+A Python-based command-line trading bot that places MARKET and LIMIT orders on Binance Futures Demo/Test Environment using the Binance API.
 
 ## Features
 
@@ -51,7 +51,7 @@ pip install -r requirements.txt
 
 ## Environment Variables
 
-Create a `.env` file in the root directory:
+Create a `.env` file in the project root:
 
 ```env
 API_KEY=your_api_key
@@ -111,7 +111,7 @@ The application validates:
 
 ## Assumptions
 
-* Binance Futures Demo Trading account is configured correctly.
+* Binance Futures Demo/Test Environment credentials are configured correctly.
 * Valid API credentials are available.
 * Futures permissions are enabled for the API key.
 * Internet access is available during execution.
@@ -126,4 +126,4 @@ The application validates:
 
 ## Author
 
-Sherlien Molly D
+Sherlien
