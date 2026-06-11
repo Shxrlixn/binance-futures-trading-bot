@@ -85,4 +85,4 @@ logs/trading_bot.log
 
 ## Author
 
-Sherlien
+Sherlien Molly D
